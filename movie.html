@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 Фильм - CinemaOnline</title>
+    <link rel="stylesheet" href="css/particles.css">
+    <link rel="stylesheet" href="css/movie.css">
+</head>
+<body>
+    <!-- Анимированный фон с частицами -->
+    <div class="particles-container" id="particles-container">
+        <div class="glow-effect"></div>
+        <div class="light-rays"></div>
+    </div>
+
+    <div class="container">
+        <button class="back-button" onclick="goBack()">← Назад к каталогу</button>
+        
+        <div id="movie-container">
+            <div class="loading">✨ Загружаем информацию о фильме...</div>
+        </div>
+
+        <div class="player-section">
+            <h2>🎬 Плеер</h2>
+            <div id="player-title" class="player-title"></div>
+            <div class="player-placeholder" id="player-placeholder">
+                <div style="text-align: center;">
+                    <div style="font-size: 64px; margin-bottom: 20px; animation: pulse 2s ease-in-out infinite;">🎬</div>
+                    <p style="font-size: 1.2rem; margin-bottom: 10px;">Готов к просмотру!</p>
+                    <p style="color: rgba(255, 255, 255, 0.6);">Нажмите кнопку "Смотреть" чтобы начать воспроизведение</p>
+                </div>
+            </div>
+            <div id="video-container" style="display: none;">
+                <video id="video-player" class="video-player" controls style="display: none;">
+                    Ваш браузер не поддерживает видео тег.
+                </video>
+                
+                <iframe id="iframe-player" 
+                        class="video-iframe"
+                        style="display: none;"
+                        allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+
+        <div class="similar-movies">
+            <h2>🎭 Похожие фильмы</h2>
+            <div id="similar-container" class="similar-grid">
+                <div class="loading">Подбираем похожие фильмы...</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Создание анимированных частиц
+        function createParticles() {
+            const container = document.getElementById('particles-container');
+            const particleCount = 30; // Меньше частиц для страницы фильма
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                
+                // Случайные размеры частиц
+                const size = Math.random() * 3 + 1;
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
+                
+                // Случайное положение
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                
+                // Случайная задержка анимации
+                particle.style.animationDelay = Math.random() * 6 + 's';
+                
+                container.appendChild(particle);
+            }
+        }
+        
+        // Запуск создания частиц при загрузке
+        window.addEventListener('DOMContentLoaded', createParticles);
+    </script>
+    <script src="js/movie.js"></script>
+</body>
+</html>

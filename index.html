@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎬 CinemaOnline - Лучшие фильмы и сериалы</title>
+    <link rel="stylesheet" href="css/particles.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Анимированный фон с частицами -->
+    <div class="particles-container" id="particles-container">
+        <div class="glow-effect"></div>
+        <div class="light-rays"></div>
+    </div>
+
+    <header>
+        <h1>🎬 CinemaOnline</h1>
+        <p>✨ Откройте для себя мир захватывающих фильмов и сериалов ✨</p>
+        <div class="search-header">
+            <input type="text" id="header-search" placeholder="🔍 Найти ваш любимый фильм...">
+            <button onclick="searchFromHeader()">Поиск</button>
+            <a href="search.html" class="search-link">Расширенный поиск</a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="section">
+            <h2>🔥 Популярные фильмы</h2>
+            <div id="popular-films" class="movies-grid">
+                <div class="loading">Загружаем лучшие фильмы для вас...</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>🎭 Драматические шедевры</h2>
+            <div id="drama-films" class="movies-grid">
+                <div class="loading">Подготавливаем эмоциональные истории...</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>😂 Лучшие комедии</h2>
+            <div id="comedy-films" class="movies-grid">
+                <div class="loading">Находим самые смешные фильмы...</div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>📺 Новые сериалы</h2>
+            <div id="new-series" class="movies-grid">
+                <div class="loading">Загружаем захватывающие сериалы...</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Создание анимированных частиц
+        function createParticles() {
+            const container = document.getElementById('particles-container');
+            const particleCount = 50;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                
+                // Случайные размеры частиц
+                const size = Math.random() * 4 + 2;
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
+                
+                // Случайное положение
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                
+                // Случайная задержка анимации
+                particle.style.animationDelay = Math.random() * 6 + 's';
+                
+                container.appendChild(particle);
+            }
+        }
+        
+        // Запуск создания частиц при загрузке
+        window.addEventListener('DOMContentLoaded', createParticles);
+    </script>
+    <script src="js/script.js"></script>
+</body>
+</html>

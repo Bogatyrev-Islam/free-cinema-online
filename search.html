@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔍 Поиск - CinemaOnline</title>
+    <link rel="stylesheet" href="css/particles.css">
+    <link rel="stylesheet" href="css/search.css">
+</head>
+<body>
+    <!-- Анимированный фон с частицами -->
+    <div class="particles-container" id="particles-container">
+        <div class="glow-effect"></div>
+        <div class="light-rays"></div>
+    </div>
+
+    <div class="container">
+        <button class="back-button" onclick="goBack()">← Назад к каталогу</button>
+        
+        <div class="search-container">
+            <h1>🔍 Поиск фильмов и сериалов</h1>
+            
+            <div class="search-box">
+                <input type="text" id="search-input" class="search-input" placeholder="✨ Введите название фильма или сериала...">
+                <button onclick="search()" class="search-button">🚀 Найти</button>
+            </div>
+
+            <div class="filters">
+                <select id="type-filter" class="filter-select">
+                    <option value="">🎬 Все типы</option>
+                    <option value="films">🎥 Фильмы</option>
+                    <option value="serials">📺 Сериалы</option>
+                    <option value="cartoon">🎨 Мультфильмы</option>
+                </select>
+
+                <select id="genre-filter" class="filter-select">
+                    <option value="">🎭 Все жанры</option>
+                    <option value="action">⚔️ Боевик</option>
+                    <option value="drama">🎭 Драма</option>
+                    <option value="comedy">😂 Комедия</option>
+                    <option value="horror">👻 Ужасы</option>
+                </select>
+
+                <input type="number" id="year-filter" class="filter-select" placeholder="📅 Год" min="1900" max="2024">
+            </div>
+
+           <br><div style="color: rgba(255, 255, 255, 0.80); font-size: 14px; font-style: italic;">🛟 Если объект поиска не найден, проверьте корректность запроса !</div>
+
+        </div>
+
+        <div id="search-results">
+            <div style="text-align: center; padding: 80px 20px; color: rgba(255, 255, 255, 0.6); font-size: 1.2rem;">
+                <div style="font-size: 64px; margin-bottom: 20px; animation: pulse 2s ease-in-out infinite;">🎬</div>
+                <p style="margin-bottom: 10px; font-weight: 500;">Готовы найти ваш следующий любимый фильм?</p>
+                <p style="font-size: 1rem; opacity: 0.8;">Введите поисковый запрос и начните исследование</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Создание анимированных частиц
+        function createParticles() {
+            const container = document.getElementById('particles-container');
+            const particleCount = 40;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                
+                // Случайные размеры частиц
+                const size = Math.random() * 3 + 1.5;
+                particle.style.width = size + 'px';
+                particle.style.height = size + 'px';
+                
+                // Случайное положение
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.top = Math.random() * 100 + '%';
+                
+                // Случайная задержка анимации
+                particle.style.animationDelay = Math.random() * 6 + 's';
+                
+                container.appendChild(particle);
+            }
+        }
+        
+        // Запуск создания частиц при загрузке
+        window.addEventListener('DOMContentLoaded', createParticles);
+    </script>
+    <script src="js/search.js"></script>
+</body>
+</html>
