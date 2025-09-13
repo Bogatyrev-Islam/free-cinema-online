@@ -216,7 +216,7 @@ function searchFromHeader() {
     if (query) {
         window.location.href = `search.html?query=${encodeURIComponent(query)}`;
     } else {
-        alert('Введите поисковый запрос');
+        window.location.href = `search.html`;
     }
 }
 
