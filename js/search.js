@@ -17,10 +17,10 @@ async function search() {
     const genre = document.getElementById('genre-filter').value;
     const year = document.getElementById('year-filter').value;
 
-    if (!query) {
-        alert('Пожалуйста, введите поисковый запрос');
-        return;
-    }
+    // if (!query) {
+    //     alert('Пожалуйста, введите поисковый запрос');
+    //     return;
+    // }
 
     // Показываем загрузку
     document.getElementById('search-results').innerHTML = `
