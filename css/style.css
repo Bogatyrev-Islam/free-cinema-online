@@ -349,40 +349,84 @@ header p {
 /* Адаптивность */
 @media (max-width: 768px) {
     .container {
+        margin-top: 170px;
         padding: 0 15px;
     }
     
+    header {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 10;
+    }
+
     h1 {
         font-size: 2.2rem;
     }
     
     .search-header {
-        flex-direction: column;
+        flex-direction: row;
+        gap: 0;
     }
-    
+
+    header p{
+        display: none;
+    }
+
     .search-header input {
-        width: 100%;
+        width: 60%;
         max-width: 400px;
+        border-radius: 15px 0px 0px 15px;
     }
-    
+
+    .search-header button {
+        border-radius: 0px 15px 15px 0px;
+    }
+
+    .search-link {
+        display: none;
+    }
+
     .movies-grid {
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
         gap: 20px;
     }
     
+    .section{
+        margin: 0;
+    }
+
     .section h2 {
         font-size: 1.6rem;
     }
+    
+    .movie-card{
+        margin-left: auto;
+        margin-right: auto;
+        width: 270px;
+    }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 370px) {
+    .search-header input {
+        width: 100%;
+        max-width: 400px;
+        border-radius: 15px;
+    }
+
+    .search-header button {
+        margin-top: 10px;
+        border-radius: 15px;
+    }
+
+    .container {
+        margin-top: 220px;
+        padding: 0 15px;
+    }
+
     .movies-grid {
         grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
         gap: 15px;
-    }
-    
-    .movie-card img {
-        height: 280px;
     }
     
     h1 {
