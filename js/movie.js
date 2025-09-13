@@ -137,9 +137,9 @@ function displayMovie(movie) {
                     <h3>Описание</h3>
                     <p>${movieInfo.description}</p>
                 </div>
-
+                
                 <button class="watch-btn" onclick="setupPlayer('${String(movieInfo.id)}')">
-                    ▶️ Смотреть ${movieInfo.type === 'serial' ? 'сериал' : 'фильм'}
+                    ▶ Смотреть ${movieInfo.type === 'film' ? 'фильм' : 'сериал'} 
                 </button>
             </div>
         </div>
@@ -322,7 +322,7 @@ function displaySimilarMovies(movies) {
                 <img src="${poster}" 
                      alt="${title}"
                      onerror="this.src='https://via.placeholder.com/150x225?text=No+Image'">
-                <div class="similar-title">${title}</div>
+                <div class="similar-title">${title.length > 25 ? title.substring(0, 25) + '...' : title}</div>
                 <div class="similar-year">${year}</div>
             </div>
         `;
