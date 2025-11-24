@@ -28,6 +28,7 @@ header {
     background: rgba(15, 15, 35, 0.9);
     backdrop-filter: blur(20px);
     border: 1px solid rgba(100, 200, 255, 0.2);
+    border-top: 0px;
     color: white;
     padding: 30px 20px;
     margin: 0px auto;
@@ -433,3 +434,4 @@ header p {
         font-size: 1.8rem;
     }
 }
+
